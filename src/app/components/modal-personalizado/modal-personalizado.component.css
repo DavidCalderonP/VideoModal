@@ -1,0 +1,24 @@
+.dialog-header {
+  color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.header-left {
+  width: 50%;
+  text-align: end;
+}
+
+
+button {
+  text-align: end;
+  background-color: #111111;
+  color: #FFFFFF;
+  border: none;
+  width: 50%;
+}
+
+button:focus{
+  outline: none;
+}
