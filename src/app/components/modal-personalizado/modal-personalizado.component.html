@@ -1,32 +1,39 @@
-<div class="dialog-container dialog-header" mat-dialog-title>
-  <div>
-    Todos los videos
-  </div>
-  <div class="header-left">
-    <button class="button-close" mat-dialog-close><mat-icon>close</mat-icon></button>
-  </div>
-</div>
-<mat-dialog-content>
-  <carousel
-    cellWidth="100%"
-    [dots]="true">
-    <div class="carousel-cell">
-      <video style="cursor: pointer;" #video width="320" height="240" controls (focus)="video.play();" (blur)="video.pause();">
-        <source src="https://www.w3schools.com/tags/movie.mp4" type="video/mp4">
-        <source src="https://www.w3schools.com/tags/movie.ogg" type="video/ogg">
-        Your browser does not support the video tag.
-      </video>
-      <div class="title">jvnsdjbcjbv</div>
+<div class="center-container" style="flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;">
+  <div class="dialog-container dialog-header" mat-dialog-title>
+    <div>
+      Todos los videos
     </div>
+    <div class="header-left">
+      <button class="button-close" mat-dialog-close><mat-icon>close</mat-icon></button>
+    </div>
+  </div>
+  <mat-dialog-content>
+    <carousel
+      [height]="500"
+      cellWidth="100%"
+      [dots]="true">
+      <div class="carousel-cell">
+        <video style="cursor: pointer;" #video controls (focus)="video.play();" (blur)="video.pause();">
+          <source src="https://www.w3schools.com/tags/movie.mp4" type="video/mp4">
+          <source src="https://www.w3schools.com/tags/movie.ogg" type="video/ogg">
+          Your browser does not support the video tag.
+        </video>
+        <div class="title">jvnsdjbcjbv</div>
+      </div>
 
-    <div class="carousel-cell">
-      <video #video1 width="320" height="240" controls (focus)="video1.play();" (blur)="video1.pause();">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-        <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </carousel>
-</mat-dialog-content>
-<mat-dialog-actions>
-</mat-dialog-actions>
+      <div class="carousel-cell">
+        <video #video1 width="320" height="240" controls (focus)="video1.play();" (blur)="video1.pause();">
+          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+          <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </carousel>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+  </mat-dialog-actions>
+
+</div>
