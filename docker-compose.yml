@@ -4,7 +4,7 @@ services:
     image: angular:10
     working_dir: /app
     ports:
-      - 4200:4200
+      - 4201:4201
     volumes:
       - ./:/app:delegated
-    command: ["ng","serve", "--host", "0.0.0.0"]
+    command: ["ng", "serve", "--port", "4201", "--host", "0.0.0.0"]

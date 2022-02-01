@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatIconModule} from "@angular/material/icon";
 import {IvyCarouselModule} from "angular-responsive-carousel";
+import {MatCarouselModule} from "@ngmodule/material-carousel";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {IvyCarouselModule} from "angular-responsive-carousel";
     BrowserAnimationsModule,
     MatDialogModule,
     MatIconModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    MatCarouselModule.forRoot()
   ],
   providers: [
     UserService

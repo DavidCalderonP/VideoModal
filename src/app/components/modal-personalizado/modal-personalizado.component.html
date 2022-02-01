@@ -11,29 +11,38 @@
     </div>
   </div>
   <mat-dialog-content>
-    <carousel
-      [height]="500"
-      cellWidth="100%"
-      [dots]="true">
-      <div class="carousel-cell">
-        <video style="cursor: pointer;" #video controls (focus)="video.play();" (blur)="video.pause();">
-          <source src="https://www.w3schools.com/tags/movie.mp4" type="video/mp4">
-          <source src="https://www.w3schools.com/tags/movie.ogg" type="video/ogg">
-          Your browser does not support the video tag.
-        </video>
-        <div class="title">jvnsdjbcjbv</div>
-      </div>
+<!--    <carousel-->
+<!--      (click)="change($event)"-->
+<!--      [height]="500"-->
+<!--      [counter]="true"-->
+<!--      cellWidth="100%">-->
+<!--      <div class="carousel-cell" *ngFor="let item of data" >-->
+<!--          <video style="cursor: pointer;" id="{{'video' + item.id}}" (playing)="reproduciendo()" controls (blur)="pausar('video' + item.id)">-->
+<!--            <source src="{{item.mp4}}" type="video/mp4">-->
+<!--            <source src="{{item.ogg}}" type="video/ogg">-->
+<!--            Your browser does not support the video tag.-->
+<!--          </video>-->
+<!--      </div>-->
+<!--    </carousel>-->
 
-      <div class="carousel-cell">
-        <video #video1 width="320" height="240" controls (focus)="video1.play();" (blur)="video1.pause();">
-          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-          <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+    <mat-carousel #carousel color="primary" (change)="change($event)" [autoplay]="false" timings="650ms ease-in" [slideHeight]="'100%'" [proportion]="50" [hideArrows]="false">
+      <mat-carousel-slide overlayColor="#ffffff" *ngFor="let item of data" >
+        <video style="cursor: pointer;" width="100%" height="100%" id="{{'video' + item.id}}" (playing)="reproduciendo()" controls (blur)="pausar('video' + item.id)">
+          <source src="{{item.mp4}}" type="video/mp4">
+          <source src="{{item.ogg}}" type="video/ogg">
           Your browser does not support the video tag.
         </video>
-      </div>
-    </carousel>
+      </mat-carousel-slide>
+    </mat-carousel>
   </mat-dialog-content>
   <mat-dialog-actions>
+    <ul id="images" class="images">
+      <li *ngFor="let item of data"><img style="width: 270px" [src]="item.path"></li>
+      <div *ngIf="data.length<-1 else sobreado"></div>
+    </ul>
   </mat-dialog-actions>
-
 </div>
+
+<ng-template #sobreado>
+  <span>Ahora en reproducción</span>
+</ng-template>

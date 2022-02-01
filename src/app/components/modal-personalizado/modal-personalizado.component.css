@@ -10,6 +10,10 @@
   text-align: end;
 }
 
+.carousel-cell{
+  padding: 0 13em;
+}
+
 
 button {
   text-align: end;
@@ -17,6 +21,13 @@ button {
   color: #FFFFFF;
   border: none;
   width: 50%;
+}
+.images {
+  display: flex;
+  white-space: nowrap;
+  overflow: auto;
+  padding: 0;
+  list-style-type: none;
 }
 
 button:focus{
